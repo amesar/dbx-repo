@@ -7,4 +7,4 @@ def print_versions():
     print("Sys Version:",sys.version)
     print("Sys Version:",sys.version.replace("\n"," - "))
 
-print_versions()
+#print_versions()
