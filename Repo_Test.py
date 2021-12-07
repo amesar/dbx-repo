@@ -18,7 +18,3 @@ path = "data.json"
 with open(path, "r") as f:
     dct = json.loads(f.read())
 dct
-
-# COMMAND ----------
-
-
