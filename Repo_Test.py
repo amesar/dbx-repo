@@ -5,3 +5,8 @@ print("Test Repo notebook")
 
 import python_script
 python_script.funk()
+
+# COMMAND ----------
+
+from dir import python_script
+python_script.funk()
