@@ -1,18 +1,9 @@
 # Databricks notebook source
-# MAGIC %md ## Testing databricks Repos
+# MAGIC %md ## dbx-repo - Testing Databricks Repos
 # MAGIC 
+# MAGIC Notebooks
 # MAGIC * [Repo_Test]($Repo_Test)
-# MAGIC * [Long Repo_Test]($/Workspace/Repos/andre.mesarovic@databricks.com/dbx-repo/Repo_Test)
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-import os
-os.getcwd()
-
-# COMMAND ----------
-
-
+# MAGIC * [Test_Workspace_Experiment]($Test_Workspace_Experiment)
+# MAGIC 
+# MAGIC 
+# MAGIC Last Updated: 2021-12-13
