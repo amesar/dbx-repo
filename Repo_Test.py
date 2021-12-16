@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-print("Test Repo notebook")
+print("Test Repo notebook 2")
 
 # COMMAND ----------
 
