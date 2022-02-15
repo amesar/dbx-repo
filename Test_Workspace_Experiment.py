@@ -24,6 +24,11 @@ with mlflow.start_run() as run:
 
 # COMMAND ----------
 
+#commit = "d53dbeb2b40c46efec2607de6023693978700a38"
+#client.set_tag(run.info.run_id, "mlflow.source.git.commit",commit)
+
+# COMMAND ----------
+
 host_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext().tags().get("browserHostName").get()
 uri = "https://{}/#mlflow/experiments/{}".format(host_name, run.info.experiment_id)
 displayHTML("""<b>Experiment URI:</b> <a href="{}">{}</a>""".format(uri,uri))
