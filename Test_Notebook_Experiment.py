@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %md ### Test Repos - Workspace Experiment  22
+# MAGIC %md ### Test Repos - Workspace Experiment 
 
 # COMMAND ----------
 
@@ -27,5 +27,7 @@ run.data.tags
 # COMMAND ----------
 
 host_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext().tags().get("browserHostName").get()
+uri = "https://{}/#mlflow/experiments/{}/runs/{}".format(host_name, run.info.experiment_id, run.info.run_id)
+displayHTML("""<b>Run URI:</b> <a href="{}">{}</a>""".format(uri,uri))
 uri = "https://{}/#mlflow/experiments/{}".format(host_name, run.info.experiment_id)
 displayHTML("""<b>Experiment URI:</b> <a href="{}">{}</a>""".format(uri,uri))

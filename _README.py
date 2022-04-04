@@ -7,6 +7,7 @@
 # MAGIC * [Test_Notebook_Experiment]($Test_Notebook_Experiment)
 # MAGIC 
 # MAGIC Other
-# MAGIC * https://github.com/amesar/dbx-repo
+# MAGIC * https://github.com/amesar/dbx-repo 
+# MAGIC * Two branches: main and dev
 # MAGIC 
 # MAGIC Last Updated: 2022-04-03
