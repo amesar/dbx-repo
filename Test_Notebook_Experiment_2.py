@@ -8,7 +8,7 @@ client = mlflow.tracking.MlflowClient()
 
 # COMMAND ----------
 
-with mlflow.start_run(run_name="main") as run:
+with mlflow.start_run(run_name="main 2") as run:
     mlflow.set_tag("greetings", "Hello Notebook Experiment")
     print("run_id:", run.info.run_id)
     print("experiment_id:", run.info.experiment_id)
