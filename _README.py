@@ -1,4 +1,2 @@
 # Databricks notebook source
-# MAGIC %md ## Testing databricks Repos
-# MAGIC 
-# MAGIC dev github branch
+# MAGIC %md ## Testing databricks Repos - dev branch
