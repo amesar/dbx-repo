@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %md ## dbx-repo - Testing Databricks Repos
+# MAGIC %md ## dbx-repo - Testing Databricks Repos - main branch
 # MAGIC 
 # MAGIC Notebooks
 # MAGIC * [Repo_Test]($Repo_Test)
@@ -10,4 +10,4 @@
 # MAGIC * https://github.com/amesar/dbx-repo 
 # MAGIC * Two branches: main and dev
 # MAGIC 
-# MAGIC Last Updated: 2022-04-03
+# MAGIC Last Updated: 2022-04-04

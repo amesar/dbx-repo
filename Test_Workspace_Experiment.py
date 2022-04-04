@@ -19,7 +19,7 @@ mlflow.set_experiment(experiment_name)
 
 # COMMAND ----------
 
-with mlflow.start_run() as run:
+with mlflow.start_run(run_name="main branch") as run:
     mlflow.set_tag("greetings", "Hello Workspace Experiment - main branch")
     print("run_id:", run.info.run_id)
     print("experiment_id:", run.info.experiment_id)
