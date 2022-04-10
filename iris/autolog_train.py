@@ -9,7 +9,9 @@ print("  MLflow Version:", mlflow.__version__)
 print("  Sklearn Version:", sklearn.__version__)
 print("  MLflow Tracking URI:", mlflow.get_tracking_uri())
 
-def train(max_depth, data_path):
+def train(experiment_name=None, max_depth=5, data_path=None):
+    if experiment_name:
+        mlflow.set_experiment(experiment_name)
     mlflow.sklearn.autolog()
     X_train, X_test, y_train, _ = get_data(data_path)
     model = DecisionTreeClassifier(max_depth=max_depth)
@@ -27,9 +29,7 @@ def main(experiment_name, data_path, max_depth):
     print("Options:")
     for k,v in locals().items():
         print(f"  {k}: {v}")
-    if experiment_name:
-        mlflow.set_experiment(experiment_name)
-    train(max_depth, data_path)
+    train(experiment_name, max_depth, data_path)
 
 if __name__ == "__main__":
     main()

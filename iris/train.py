@@ -10,10 +10,10 @@ print("  MLflow Version:", mlflow.__version__)
 print("  Sklearn Version:", sklearn.__version__)
 print("  MLflow Tracking URI:", mlflow.get_tracking_uri())
 
-def train(model_name, max_depth, data_path):
-    #X_train, X_test, y_train, y_test = train_test_split(dataset.data, dataset.target, test_size=0.3)
+def train(experiment_name=None, model_name=None, max_depth=5, data_path=None):
     X_train, X_test, y_train, y_test = get_data(data_path)
-
+    if experiment_name:
+        mlflow.set_experiment(experiment_name)
     with mlflow.start_run() as run: 
         print("run_id:", run.info.run_id)
         mlflow.set_tag("mlflow_version",mlflow.__version__)
@@ -37,9 +37,7 @@ def main(experiment_name, data_path, model_name, max_depth):
     print("Options:")
     for k,v in locals().items():
         print(f"  {k}: {v}")
-    if experiment_name:
-        mlflow.set_experiment(experiment_name)
-    train(model_name, max_depth, data_path)
+    train(experiment_name, model_name, max_depth, data_path)
 
 if __name__ == "__main__":
     main()
