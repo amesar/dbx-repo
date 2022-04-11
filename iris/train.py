@@ -26,6 +26,7 @@ def train(experiment_name=None, model_name=None, max_depth=5, data_path=None):
         print("accuracy_score:",accuracy_score)
         mlflow.log_metric("accuracy_score",accuracy_score)
         mlflow.sklearn.log_model(model, "sklearn-model", registered_model_name=model_name)
+        return accuracy_score
 
 @click.command()
 @click.option("--experiment-name", help="Experiment name.", default=None, type=str)
@@ -37,7 +38,7 @@ def main(experiment_name, data_path, model_name, max_depth):
     print("Options:")
     for k,v in locals().items():
         print(f"  {k}: {v}")
-    train(experiment_name, model_name, max_depth, data_path)
+    return train(experiment_name, model_name, max_depth, data_path)
 
 if __name__ == "__main__":
     main()
