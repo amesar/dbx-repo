@@ -1,7 +1,9 @@
 # Databricks notebook source
 # MAGIC %md ### Test Repos - Workspace Experiment - main branch
 # MAGIC 
-# MAGIC Experiment: https://demo.cloud.databricks.com/#mlflow/experiments/12516221
+# MAGIC Experiment: 
+# MAGIC * https://e2-demo-west.cloud.databricks.com/?o=2556758628403379#mlflow/experiments/263313384358022?
+# MAGIC * https://demo.cloud.databricks.com/#mlflow/experiments/12516221
 
 # COMMAND ----------
 
@@ -19,8 +21,14 @@ mlflow.set_experiment(experiment_name)
 
 # COMMAND ----------
 
-with mlflow.start_run(run_name="main branch") as run:
+import time
+now = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(time.time()))
+with mlflow.start_run(run_name="main branch - {now}") as run:
     mlflow.set_tag("greetings", "Hello Workspace Experiment - main branch")
+    mlflow.set_tag("timestamp", now)
+    mlflow.set_tag("version_mlflow", mlflow.__version__)
+    mlflow.log_param("max_depth", 5)
+    mlflow.log_metric("rmse", 0.789)
     print("run_id:", run.info.run_id)
     print("experiment_id:", run.info.experiment_id)
     print("experiment_name:", client.get_experiment(run.info.experiment_id).name)
