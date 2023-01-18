@@ -7,10 +7,12 @@
 
 # COMMAND ----------
 
-#notebook = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
-#dbutils.widgets.text("Experiment name", notebook)
-#experiment_name = dbutils.widgets.get("Experiment name")
-experiment_name = "/Users/andre.mesarovic@databricks.com/experiments/dbx-repo/Test_Workspace_Experiment"
+notebook = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
+experiment_name = notebook
+#experiment_name = "/Users/andre.mesarovic@databricks.com/experiments/dbx-repo/Test_Workspace_Experiment"
+
+dbutils.widgets.text("Experiment name", notebook)
+experiment_name = dbutils.widgets.get("Experiment name")
 experiment_name
 
 # COMMAND ----------
@@ -23,7 +25,7 @@ mlflow.set_experiment(experiment_name)
 
 import time
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(time.time()))
-with mlflow.start_run(run_name="main branch - {now}") as run:
+with mlflow.start_run(run_name=f"main branch - {now}") as run:
     mlflow.set_tag("greetings", "Hello Workspace Experiment - main branch")
     mlflow.set_tag("timestamp", now)
     mlflow.set_tag("version_mlflow", mlflow.__version__)

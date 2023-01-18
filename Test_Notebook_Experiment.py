@@ -12,7 +12,7 @@ mlflow.__version__
 import time
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(time.time()))
 
-with mlflow.start_run(run_name= f"main - {now}") as run:
+with mlflow.start_run(run_name=f"main - {now}") as run:
     mlflow.set_tag("greetings", "Hello Notebook Experiment")
     mlflow.set_tag("timestamp", now)
     mlflow.set_tag("version_mlflow", mlflow.__version__)
